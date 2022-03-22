@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Montserrat";
-  src: url(./Fonts/Montserrat-Regular.ttf);
+  src: url("./Fonts/Montserrat-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url(./Fonts/Montserrat-Light.ttf);
+  src: url("./Fonts/Montserrat-Light.ttf");
   font-weight: 300;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url(./Fonts/Montserrat-Medium.ttf);
+  src: url("./Fonts/Montserrat-Medium.ttf");
   font-weight: 500;
 }
 html {
@@ -26,6 +26,7 @@ body {
   text-decoration: none;
   font-family: "Montserrat";
   color: #272727;
+  box-sizing: border-box;
 }
 ul {
   list-style: none;
@@ -36,7 +37,6 @@ ul {
 }
 .header {
   width: 124rem;
-  height: 8.5rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -68,7 +68,9 @@ ul {
 .active {
   opacity: 1;
 }
-
+.mobile-menu-icon {
+  display: none;
+}
 .full-screen {
   margin-bottom: 0.5rem;
 }
@@ -144,6 +146,7 @@ ul {
 
 .total-basket {
   position: relative;
+  display: inline-block;
 }
 .filter-on-hover {
   z-index: 5;
@@ -487,7 +490,7 @@ h1 {
   background-color: rgba(228, 1, 58, 1);
 }
 
-.description-discount p:first-of-type {
+.discount-percentage {
   color: #fff;
   font-weight: 500;
   font-size: 2.2rem;
@@ -839,8 +842,8 @@ h4 {
 
 .send-message-heading {
   position: fixed;
-  right: 7px;
-  bottom: -1px;
+  right: 0.7rem;
+  bottom: -0.1rem;
   background-color: #a6a3a3;
   cursor: pointer;
   border-radius: 5px 5px 0px 0px;
@@ -852,18 +855,241 @@ h4 {
 }
 .send-message-heading p {
   color: white;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.4px;
 }
 .send-message {
   position: fixed;
-  right: 7px;
-  bottom: -1px;
+  right: 0.7rem;
+  bottom: -0.1rem;
   background-color: yellow;
   border-radius: 5px 5px 0px 0px;
   border: 1px solid #e9e9e9;
   width: 35.04rem;
   height: 52rem;
   display: none;
+}
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  html {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 940px) {
+  html {
+    font-size: 6px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+  .site {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .main {
+    width: unset;
+  }
+  .menu-section,
+  .profile {
+    display: none;
+  }
+  .header {
+    width: 90vw;
+    padding-top: unset;
+    height: 100%;
+    align-items: center;
+  }
+  .left-logo-link-container {
+    display: none;
+  }
+  .header-holder {
+    width: 100vw;
+    height: 82px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
+  .header-right a {
+    width: 20px;
+    height: 18px;
+  }
+  .header-left {
+    width: unset;
+  }
+  .header-left a:not(.mobile-menu-icon) {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+  .total-basket {
+    margin-right: 0 !important;
+  }
+  .total-basket img {
+    object-fit: contain;
+  }
+
+  .product-path {
+    display: none;
+  }
+  .main-product-description {
+    width: 100%;
+  }
+  .main-product-images {
+    display: flex;
+    flex-direction: column;
+    width: unset;
+    height: unset;
+  }
+  .main-product-image {
+    order: 0;
+    height: 350px;
+    width: 100%;
+  }
+  .secondary-products-holder {
+    order: 1;
+  }
+  .main-product {
+    display: block;
+    height: unset;
+    margin-top: 102px;
+  }
+
+  .secondary-product-image {
+    flex-direction: row;
+  }
+  .secondary-product-image div {
+    width: calc(100% / 3);
+    background-color: #f0efed;
+  }
+  .secondary-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .description-discount {
+    width: 60px;
+    height: 60px;
+  }
+  .discount-percentage {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .description-discount p:not(.discount-percentage) {
+    font-size: 12px;
+  }
+  h1 {
+    max-width: 75%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .item-code {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 7px;
+  }
+  .price p,
+  .price span {
+    margin-right: 7px;
+    font-size: 18px;
+  }
+  .add-to-basket {
+    width: 100%;
+  }
+  .secondary-content-holder {
+    border-bottom: 0px;
+  }
+  .secondary-content {
+    width: 100%;
+  }
+  .man-button {
+    width: 100%;
+  }
+  .footer-holder {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 0;
+    height: unset;
+  }
+  .footer-list {
+    padding: 3rem 0;
+    position: relative;
+    order: 2;
+  }
+
+  .subscribe-section {
+    order: 1;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .subscribe-section::before,
+  .subscribe-section::after {
+    position: absolute;
+    border-bottom: 1px solid #dcdcdc;
+    left: -5%;
+    content: " ";
+    display: block;
+    width: 100vw;
+  }
+  .subscribe-section::before {
+    top: -3rem;
+  }
+
+  .subscribe-section::after {
+    bottom: -3rem;
+  }
+
+  .footer-list::after {
+    position: absolute;
+    border-bottom: 1px solid #dcdcdc;
+    left: -5%;
+    bottom: 1rem;
+    content: " ";
+    display: block;
+
+    width: 100vw;
+  }
+  .send-message-section {
+    display: none;
+  }
+  .header-center {
+    width: unset;
+    margin-left: 2.5rem;
+  }
+  .header-right {
+    height: unset;
+    margin-top: 0;
+    width: unset;
+  }
+  .full-screen {
+    margin-top: 10.4rem;
+  }
+  #product-full-screen {
+    width: 100%;
+  }
+  #product-full-screen .secondary-product-image {
+    display: none;
+  }
+  .exit-button {
+    right: 18px;
+    top: 109px;
+  }
 }

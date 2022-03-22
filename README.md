@@ -1,2 +1,0 @@
-# Chinici
-Online Shopping webpage
