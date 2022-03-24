@@ -139,29 +139,46 @@ ul {
   display: flex;
   margin-top: 0.5rem;
 }
-.header-right a {
-  height: 2rem;
+.header-right > a:not(.profile) {
   margin-right: 2rem;
 }
-
 .total-basket {
   position: relative;
   display: inline-block;
+  background-image: url("./Pictures/Icons/shop-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 2rem;
+  height: 1.8rem !important;
+  margin-top: 0.3rem;
 }
+
 .filter-on-hover {
   z-index: 5;
   position: absolute;
   top: 12.4rem;
-  width: 100vw;
-  height: 100vh;
+  height: 200vh;
   background-color: rgba(141, 141, 141, 0.2);
   display: none;
+  left: -243.3rem;
+  width: 400vw;
 }
 .total-basket:hover + .filter-on-hover {
   display: block;
 }
+.profile {
+  display: inline-block;
+  background-image: url("./Pictures/Icons/profile-icon.svg");
+  background-size: 100%;
+  width: 2rem;
+  height: 1.8rem;
+  background-repeat: no-repeat;
+}
 .profile:hover + .filter-on-hover {
   display: block;
+}
+.profile:hover {
+  background-image: url("./Pictures/Icons/profile-icon-hover.svg");
 }
 .item-counter {
   position: absolute;
@@ -211,10 +228,14 @@ ul {
   border: 1px solid #ececec;
   box-sizing: border-box;
   right: -4rem;
-  z-index: 3;
+  z-index: 6;
+  top: 2rem;
 }
 .total-basket:hover .basket-submenu {
   display: block;
+}
+.total-basket:hover {
+  background-image: url("./Pictures/Icons/shop-icon-hover.svg");
 }
 .text-submenu {
   width: 35.68rem;
@@ -244,7 +265,8 @@ ul {
   padding: 4rem;
   position: absolute;
   right: 0rem;
-  z-index: 3;
+  z-index: 6;
+  top: 6.5rem;
 }
 .profile:hover .profile-submenu {
   display: block;
@@ -712,6 +734,9 @@ h4 {
   display: flex;
   justify-content: space-between;
 }
+.secondary-item {
+  margin-right: 5vw;
+}
 .secondary-item div:first-child {
   overflow: hidden;
   width: 29rem;
@@ -957,7 +982,7 @@ h4 {
   }
   .main-product-image {
     order: 0;
-    height: 350px;
+    height: 40rem;
     width: 100%;
   }
   .secondary-products-holder {
@@ -1012,6 +1037,15 @@ h4 {
   }
   .secondary-content-holder {
     border-bottom: 0px;
+  }
+  .secondary-items::-webkit-scrollbar {
+    display: none;
+  }
+  .secondary-items {
+    overflow-x: scroll;
+  }
+  .header-holder {
+    background-color: white;
   }
   .secondary-content {
     width: 100%;

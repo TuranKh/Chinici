@@ -1,33 +1,3 @@
-function changeBasketImage(element) {
-    var image = (element.childNodes[1]);
-    if (image.src == "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/shop-icon.svg")
-    {
-        image.src = "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/shop-icon-hover.svg"
-    }
-}
-function returnBasketImage(element) {
-    var image = (element.childNodes[1]);
-    if (image.src == "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/shop-icon-hover.svg")
-    {
-        image.src = "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/shop-icon.svg"
-    }
-}
-function changeProfileImage(element) {
-    var image = (element.childNodes[1]);
-    if (image.src == "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/profile-icon.svg")
-    {
-        image.src = "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/profile-icon-hover.svg"
-    }
-}
-function returnProfileImage(element) {
-    var image = (element.childNodes[1]);
-    if (image.src == "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/profile-icon-hover.svg")
-    {
-        image.src = "file:///D:/Desktop/Projects/Cinici.az/Pictures/Icons/profile-icon.svg"
-    }
-}
-
-
 function itemFullScreen() {
     (document.getElementsByClassName("main-section")[0]).style.display = "none"
     document.getElementById("product-full-screen").style.display = "block"
@@ -38,16 +8,6 @@ function minimiseFullScreen(){
     document.getElementById("product-full-screen").style.display = "none"
 }
 
-/*
-    Boyuk 500px;
-    Umumi scroll 2210px;
-    header: 170px;
-    ara mesafesi: 10px;
-
-    510px bir sekil.
-    currentScrollPosition;
-    (800 - 170)/510 
-*/
 
 function moveOnScroll() {
     window.addEventListener('scroll', () => {
